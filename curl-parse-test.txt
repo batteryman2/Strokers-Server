@@ -1,0 +1,54 @@
+curl -X GET \
+	-H "X-Parse-Application-Id:oss-f8-app-2016" \
+	-H "X-Parse-Master-Key:rwscoolguy" \
+	-H "X-Parse-Installation-Id:f33fc1a9-9ba9-4589-95ca-9976c0d52cd5" \
+	http://rwsdo.duckdns.org:8080/parse/classes/Players
+	
+curl -X GET \
+	http://rwsdo.duckdns.org:8080/parse
+	
+curl -X GET \
+	-H "X-Parse-Aplication-Id: oss-f8-app-2016" \
+	http://rwsdo.duckdns.org:8080/parse/players
+
+
+curl -X GET \
+	-H "X-Parse-Application-Id: oss-f8-app-2016" \
+	-H "X-Parse-Client-Key: Raspi" \
+	http://rwsdo.duckdns.org:8080/parse/classes/Players
+
+curl -X GET \
+	-H "X-Parse-Application-Id: oss-f8-app-2016" \
+	http://rwsdo.duckdns.org:8080/parse/classes/Players
+
+curl -X POST \
+	-H "X-Parse-Application-Id: oss-f8-app-2016" \
+	-H "X-Parse-Master-Key: rwscoolguy" \
+	-H "Content-Type: application/json" \
+	-d '{ "where": { "deviceType": "ios" }, "data": { "title": "Rod-man", "alert": "This is awesome. It is awesome."}}' \
+	http://rwsdo.duckdns.org:8080/parse/push
+	
+	
+curl -X GET \
+ -H "X-Parse-Application-Id: oss-f8-app-2016" \
+ -H "X-Parse-Master-Key: rwscoolguy" \
+ http://rwsdo.duckdns.org:8080/parse/installations | python -mjson.tool
+ 
+ 
+ curl -X GET \
+ -H "X-Parse-Application-Id: oss-f8-app-2016" \
+ -H "X-Parse-Master-Key: rwscoolguy" \
+ http://rwsdo.duckdns.org:8080/parse/installations?where="{'deviceType':'ios'}"
+ 
+ {
+"alert": "Elmer Fudd",
+"sound":"ping.aiff",
+"badge":2,
+"payload":"{'messageFrom': 'Caroline'}",
+"link_url":"http://rwscameras.com/test.php",
+"category":"NEWS_CATEGORY"
+ }
+\uD83D\uDCE7 \u2709 You have a new message // icons
+content-available. By setting this key to 1, the push notification becomes a silent one. This will be explored later in this push notifications tutorial.
+
+

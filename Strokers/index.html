@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" href="assets/img/favicon.png">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>The Trails Strokers</title>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0 name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+	
+   	<script src="https://use.fontawesome.com/d787be6c64.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+	<link href="bootstrap3/css/bootstrap.min.css" rel="stylesheet" /> 
+    <link rel="stylesheet" href="assets/css/demo.css"  />
+    <link rel="stylesheet" href="test/test.css"  />
+   
+</head>
+<body>
+<div id="navbar-full-del">
+    <div class="container">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+ <!---       <nav class="navbar navbar-fixed-top" role="navigation"> -->
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="http://rwsdo.duckdns.org">
+                     <div class="logo-container">
+                        <div class="logo">
+                            <img src="assets/img/sunset.svg">
+                        </div>
+                        <div class="brand">
+                            The Trails Strokers
+                        </div>
+                    </div>
+                </a>
+            </div>
+        
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <ul class="nav navbar-nav navbar-right">
+					<li><a href="#" id="showHome">Home</a></li>
+					<li><a href="#" id="showLogin">Log In</a></li>
+					<li class="dropdown" ><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Game <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#" id="gameClicked">Scores</a></li>
+							<li><a href="#" id="summaryClicked">Summary</a></li>
+							<li><a href="#" id="newgameClicked">New</a></li>
+						</ul>
+					</li>
+<!--					<li><a href="#">Past game</a></li> -->
+					<li><a href="#" id="handicapClicked">Handicaps</a></li>
+					<li><a href="#" id="showDotsDialog">Dots to Dollars</a></li>
+<!--					<li><a href="#" id="addPlayer">Add Player</a></li>
+					<li><a href="#" id="addCourse">Add Course</a></li> -->
+               </ul>
+              
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+    </div><!--  end container-->
+    
+    <div id="blur" class='blurred-container'>
+        <div class="motto">
+            <div>Get</div>
+            <div class="border no-right-border">Yo</div><div class="border">ur</div>
+            <div>Pops</div>
+        </div>
+        <div class="img-src" style="background-image: url('assets/img/cover_1.jpg')"></div>
+    </div>
+    
+</div>   
+
+<div id="nscores" style="display:none;">
+	<div class="fixed-container">
+	<div class="fixedimg-src" style="background-image: url('assets/img/golf-balls-black.jpg')"></div>
+    <div class="container">
+		<div class="row">
+<!--            <div class="rwswidth" style="padding:0px 0px;background-color: rgba( 255, 255, 255, .5);"> -->
+            <div class="rwswidth" style="padding:0px 0px;">
+				<div class="newscorediv"></div>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+ 
+    
+
+<div class="modal fade" id="selGameType" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" >Select Game Type</h4>
+			</div>
+			<div class="modal-body">
+				<div class="gametypes"></div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Close</button>
+				<div class="divider"></div>
+				<button type="button" class="btn btn-info btn-simple" onClick="onGameChanged()">Ok</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	
+<div class="modal fade" id="chgCourseModal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" >Select Course</h4>
+			</div>
+			<div class="modal-body" style="padding: 20px 10px;">
+				<div class="courses"></div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Close</button>
+				<div class="divider"></div>
+				<button type="button" class="btn btn-info btn-simple" onClick="onCourseChanged()">Ok</button>
+			</div>
+		</div>
+	</div>
+</div>
+ 
+<div id="nselectPlayers" style="display:none;">
+	<div class="fixed-container">
+	<div class="fixedimg-src" style="background-image: url('assets/img/golf-balls.png')"></div>
+    <div class="container">
+		<div class="row">
+            <div class="rwswidth" style="padding:0px 0px;">
+				<div class="selectplayers"></div>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+
+<div id="ngame" style="display:none;">
+	<div class="fixed-container">
+		<div class="fixedimg-src" style="background-image: url('assets/img/golf-balls-black.jpg')"></div>
+		<div class="container" style="padding-top:100px;">
+			<div class="row" style="padding-bottom:10px;padding-top:10px;">
+	            <div class="rwswidth" style="padding:0px 0px;">
+
+					<table style="width:100%;text-align:center;">
+						<tr>
+							<td onClick="clknH(0)" class="gamehole" id="nh0">1</td>
+							<td onClick="clknH(1)" class="gamehole" id="nh1">2</td>
+							<td style="width:20%;">
+								<table onClick="nscoresClicked()" class="thehole" style="width:100%">
+									<tr>
+										<td>
+											<div style="float:left" >Par</div> 
+											<div style="float:right" id="npar">5</div> 
+										</td>
+									</tr>
+									<tr>
+										<td><p class="gameAhole" id="nh2">3</p></td>
+									</tr>
+									<tr>
+										<td>
+											<div style="float:left">Hdcp</div> 
+											<div style="float:right" id="nhdcp">6</div> 
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td onClick="clknH(3)" class="gamehole" id="nh3">4</td>
+							<td onClick="clknH(4)" class="gamehole" id="nh4">5</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			
+			<div class="row">
+	            <div class="rwswidth" style="padding:0px 0px;">
+					<div class="container" style="max-width:100%;">
+					
+						<div class="wholetab">
+						<div class="navtabdiv">
+							<ul class="nav nav-tabs">
+							  <li class="active"><a data-toggle="tab" href="#summary">Summary</a></li>
+							  <li><a data-toggle="tab" href="#partners">Partners</a></li>
+							</ul>
+						</div>
+
+						<div class="tab-content">
+						  <div id="summary" class="tab-pane fade in active">
+							<div class="ngameplayers"></div>
+						  </div>
+						  <div id="partners" class="tab-pane fade">
+							  <div class="modal-header" style="padding:0">
+								<div class="nselPartnerHeader"></div>
+							  </div>
+							  <div class="nselectThesePartners"></div>
+							 <div style="padding: 10px;text-align: center;">
+								<button type="button" class="btn btn-info btn-fill" onClick="nscoresClicked()">Scoring</button>
+							 </div>
+						  </div>
+						</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<div class="row">
+	            <div class="rwswidth" style="padding:0px 0px;">
+<!--					<div style="background-color:rgba( 0,0,0,1.0);height: 200px; width:100%"><p></p></div> -->
+					<div style="background-color:#111; height: 200px; width:100%"><p></p></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="gameSummary" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header" style="padding-bottom: 0px;">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<div class="summaryhead"></div> 
+			</div>
+			<div class="modal-body" style="padding: 0px 20px 10px 20px;">
+				<div class="summary"></div> 
+			</div>
+			<div class="modal-footer" style="padding-left: 0px;">
+				<button id="front9" type="button" class="btn btn-info btn-fill" onClick="frontNineClicked()">Front 9</button>
+				<button id="back9" type="button" class="btn btn-info btn-fill" onClick="backNineClicked()">Back 9</button>
+				<button id="full18" type="button" class="btn btn-info btn-fill" onClick="eigthteenClicked()">Full 18</button>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+			   
+<div class="modal fade" id="dotsToDollars" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Dots to Dollars</h4>
+			</div>
+			<div class="modal-body">
+				<div class="dotstodollarsform"></div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Close</button>
+				<div class="divider"></div>
+				<button type="button" class="btn btn-info btn-simple" onClick="calcDots()" id="dotaction" >Continue</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="logindiv">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myLoginLabel">Register</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="reg_username" class="sr-only">Email address</label>
+					<input type="text" class="form-control" id="reg_username" name="reg_username" placeholder="username">
+				</div>
+				<div class="form-group">
+					<label for="reg_password" class="sr-only">Password</label>
+					<input type="password" class="form-control" id="reg_password" name="reg_password" placeholder="password">
+				</div>
+				<div class="form-group">
+					<label for="reg_password_confirm" class="sr-only">Password Confirm</label>
+					<input type="password" class="form-control" id="reg_password_confirm" name="reg_password_confirm" placeholder="confirm password">
+				</div>
+				
+				<div class="form-group">
+					<label for="reg_email" class="sr-only">Email</label>
+					<input type="text" class="form-control" id="reg_email" name="reg_email" placeholder="email">
+				</div>
+				<p style="text-align:center;">Already Registered? <button type="button" class="btn btn-info btn-fill" onClick="tryLogin()" style="width:150px;">Login</button></p>
+				
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Cancel</button>
+				<div class="divider"></div>
+				<button type="button" class="btn btn-info btn-simple" onClick="doLogin()" >Register</button>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div id="carousel">
+    <!--  IMPORTANT - This carousel can have a special class for a smooth transition "gsdk-transition". Since javascript cannot be overwritten, if you want to use it, you can use the bootstrap.js or bootstrap.min.js from the GSDKit or you can open your bootstrap.js file, search for "emulateTransitionEnd(600)" and change it with "emulateTransitionEnd(1200)"  -->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+    
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="assets/img/carousel_blue.png" alt="Awesome Image">
+        </div>
+        <div class="item">
+          <img src="assets/img/carousel_green.png" alt="Awesome Image">
+        </div>
+        <div class="item">
+          <img src="assets/img/carousel_red.png" alt="Awesome Image">
+        </div>
+      </div>
+    
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="fa fa-angle-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="fa fa-angle-right"></span>
+      </a>
+    </div>
+</div> <!-- end carousel -->
+
+
+
+<div id="handicaps" style="display:none;">
+	<div class="fixed-container">
+	<div class="fixedimg-src" style="background-image: url('assets/img/bg6.jpg')"></div>
+    <div class="container" style = "color:#FFF;padding-top:92px;">
+		<div class="row">
+            <div class="rwswidth text-center">
+                <h1 id="ch" style="color:white;font-size:18px;padding-top:15px;display:block">The Trails current handicaps:</h1>
+				<div style="padding: 10px 0px 25px 0px; background-color: rgba(0,0,0,.5);">
+					<div class="rws-left70">
+						<div class="rws-left">Name</div> <div class="rws-right">Handicap</div>
+					</div>
+					<div class="rws-right">Updated</div>
+				</div>
+				<div class="players"></div>
+				<div class="space-30"></div>
+				<div class="credits">
+					&copy; <script>document.write(new Date().getFullYear())</script> Strokers by <a href="http://creative-tim.com"> RWS</a>, made with <i class="fa fa-beer heart" alt="love"></i> for a better time.
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+</body>
+ 	<script src="https://use.fontawesome.com/d787be6c64.js"></script>
+    <script src="jquery/jquery-1.10.2.js" type="text/javascript"></script>
+<!--	<script src="http://www.parsecdn.com/js/parse-latest.js" type="text/javascript" ></script> 
+	<script src="http://www.parsecdn.com/js/parse-1.2.19.min.js" type="text/javascript" ></script> -->
+	<script src="https://npmcdn.com/parse/dist/parse.min.js" type="text/javascript" ></script>
+	<script src="bootstrap3/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="assets/js/dotstodollars.js" type="text/javascript"></script>
+	<script src="test/test.js" type="text/javascript"> </script> 
+	<script src="assets/js/rws-game.js" type="text/javascript"> </script> 
+    
+
+</html>

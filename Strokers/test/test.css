@@ -1,0 +1,348 @@
+/*body {
+        font-family: 'Comfortaa', serif;
+}
+*/
+/* was 2cf8ff now 00f8ff */
+.dpui-numberPicker {
+/*	display: inline-block; */
+/*	border-radius: 5px; */
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+.dpui-numberPicker button {
+	margin: 0;
+	padding: 1px 6px;
+	border: 1px solid #dddddd;
+	font-size: 30px;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	vertical-align: top;
+	outline: none;
+	cursor: pointer;
+/*	
+	background: #f0f0f0;
+	background: -moz-linear-gradient(top,  #f0f0f0 0%, #00f8ff 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0f0f0), color-stop(100%,#00f8ff));
+	background: -webkit-linear-gradient(top,  #f0f0f0 0%,#00f8ff 100%);
+	background: -o-linear-gradient(top,  #f0f0f0 0%,#00f8ff 100%);
+	background: -ms-linear-gradient(top,  #f0f0f0 0%,#00f8ff 100%);
+	background: linear-gradient(to bottom,  #f0f0f0 0%,#00f8ff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#00f8ff',GradientType=0 );
+*/
+
+	background: #ffd700;
+	background: -moz-linear-gradient(top,  #ff5b00 0%, #ffd700 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff5b00), color-stop(100%,#ffd700));
+	background: -webkit-linear-gradient(top,  #ff5b00 0%,#ffd700 100%);
+	background: -o-linear-gradient(top,  #ff5b00 0%,#ffd700 100%);
+	background: -ms-linear-gradient(top,  #ff5b00 0%,#ffd700 100%);
+	background: linear-gradient(to bottom,  #ff5b00 0%,#ffd700 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5b00', endColorstr='#ffd700',GradientType=0 );
+
+}
+
+.dpui-numberPicker button:hover {
+/*	background: #00f8ff;
+	background: -moz-linear-gradient(top,  #00f8ff 0%, #f0f0f0 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00f8ff), color-stop(100%,#f0f0f0));
+	background: -webkit-linear-gradient(top,  #00f8ff 0%,#f0f0f0 100%);
+	background: -o-linear-gradient(top,  #00f8ff 0%,#f0f0f0 100%);
+	background: -ms-linear-gradient(top,  #00f8ff 0%,#f0f0f0 100%);
+	background: linear-gradient(to bottom,  #00f8ff 0%,#f0f0f0 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f8ff', endColorstr='#f0f0f0',GradientType=0 );
+*/
+	background: #ffd700;
+	background: -moz-linear-gradient(top,  #ff5b00 0%, #ffd700 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff5b00), color-stop(100%,#ffd700));
+	background: -webkit-linear-gradient(top,  #ff5b00 0%,#ffd700 100%);
+	background: -o-linear-gradient(top,  #ff5b00 0%,#ffd700 100%);
+	background: -ms-linear-gradient(top,  #ff5b00 0%,#ffd700 100%);
+	background: linear-gradient(to bottom,  #ff5b00 0%,#ffd700 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5b00', endColorstr='#ffd700',GradientType=0 );
+
+}
+
+.dpui-numberPicker-input {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	font-size:20px;
+	line-height: 30px;
+	padding: 0 8px;
+	margin: 0;
+	text-align: center;
+	outline: none;
+	vertical-align: top;
+	border: 0;
+	border-top: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+	background: #f9f9f9;
+}
+.dpui-numberPicker-input:focus {
+	background: #fff;
+}
+.dpui-numberPicker-decrease {
+	border-radius: 5px 0 0 5px;
+}
+.dpui-numberPicker-increase {
+	border-radius: 0 5px 5px 0;
+}
+
+.dpui-numberPicker.dpui-numberPicker-min .dpui-numberPicker-decrease, .dpui-numberPicker.dpui-numberPicker-max .dpui-numberPicker-increase {
+/*	background: #00f8ff; */
+	color: #999;
+}
+
+
+input.rwschk + label ::selection { background-color: rgba(255, 255, 255, 0); }
+input.rwschk + label ::-moz-selection { background-color: rgba(255, 255, 255, 0); }
+
+/* rwschk */
+input.rwschk { 
+	display: none !important;
+}
+
+/* was #ccd now #0cc  blue-green*/
+
+input.rwschk + label
+{
+	line-height: 1.0;
+	display: table;
+/* 	width: 105px; android needs this ? */
+ 	width: 90px; 
+	font-size: 16px;
+	padding: 10px;
+	margin-bottom: 5px;
+/*	background-color: #0ee; */
+	background-color: #ffb700;
+	color: #000;
+	cursor: pointer;
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	transition: background-color 0.25s;
+	-moz-transition: background-color 0.25s;
+	-webkit-transition: background-color 0.25s;
+	-o-transition: background-color 0.25s;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+/* Stylish text inside label */
+
+input.rwschk + label > span.rwschk-wolf:before
+{
+	font-family: FontAwesome;
+	top:0;
+	float:right;
+	padding-left:10px; 
+	font-size:1.5em;
+	content: "\f296"; 
+}
+
+input.rwschk + label > span.rwschk-pelosi:before
+{
+	font-family: FontAwesome;
+	top:0;
+	float:right;
+	padding-left:10px; 
+	font-size:1.5em;
+	content: "\f182"; 
+}
+
+input.rwschk + label > span.rwschk-pop:before
+{
+	font-family: FontAwesome;
+	top:0;
+	padding-right:5px; 
+	padding-left:15px; 
+	font-size:1.5em;
+	content: "\f234"; 
+}
+
+input.rwschk + label > span.rwschk-user:before
+{
+	font-family: FontAwesome;
+	top:0;
+	padding-right:5px; 
+	padding-left:15px; 
+	font-size:1.5em;
+	content: "\f2c0"; 
+}
+
+
+input.rwschk + label > span.rwschk-msg
+{
+	display: inline-block;
+	line-height: 16px;
+	margin-left: 7px;
+/*	vertical-align: bottom; */
+}
+
+/* Stylish icons inside label */
+
+input.rwschk + label > span.rwschk-unchecked-image,
+input.rwschk + label > span.rwschk-checked-image
+{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	transition: background-image 0.5s linear;
+	-moz-transition: background-image 0.5s linear;
+	-webkit-transition: background-image 0.5s linear;
+	-o-transition: background-image 0.5s linear;
+}
+
+/* When there's a label, add a little margin to the left */
+input.rwschk + label > span.rwschk-unchecked-image + span.rwschk-msg
+{
+	margin-left: 7px;
+}
+
+input.rwschk:not(:checked) + label > span.rwschk-checked-image
+{
+	display: none;
+}
+
+
+/* When Checked */
+input.rwschk:checked + label
+{
+/*	background-color: #099; */
+	background-color: #ffb700;
+	color: #fff;
+}
+/*
+input.rwschk:checked:not([disabled]) + label:hover
+{
+	background-color: #72c5fd;
+}
+*/
+input.rwschk:checked + label > span.rwschk-unchecked-image
+{
+	display: none;
+}
+
+input.rwschk:checked + label > span.rwschk-unchecked
+{
+	display: none;
+}
+
+input.rwschk:checked + label > span.rwschk-checked
+{
+	display: inline-block;
+}
+
+input.rwschk.no-label:checked + label > span.rwschk-checked
+{
+	display: block;
+}
+
+input.rwschk[disabled] + label
+{
+	color: #999;
+}
+
+input.rwschk + label > span.rwschk-unchecked-image
+{
+	background-image: url(unchecked.png );
+}
+
+input.rwschk + label > span.rwschk-checked-image
+{
+	background-image: url(input-checked.png );
+}
+
+.scoremenu{
+	position:fixed;
+	width:320px;
+    height: 50px;
+    padding: 15px 10px 10px 10px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+	background-color:#fff;
+}
+.splayeritem{
+	height:200px;
+	background-color: rgba( 255, 125, 0, .1);
+/*	background-color: transparent; */
+	color:white;
+}
+
+.spg{
+	background-color: rgba( 255, 125, 0, .7);
+	color:black;	
+/*	background-color:#0cc; 
+	background-color:#00bdb5; */
+}
+.scontroldiv{
+	float:left;
+	width:62%; 
+/*	width:195px;*/
+	padding:10px 0px 0px 0px;
+	margin: 0px;
+}
+.sicontrol{
+	margin:auto;
+	width:150px;
+}
+
+.splabel {
+	font-size:17px;
+	font-weight:bold;
+	padding-left: 5px;
+}
+.silabel{
+	font-size:16px;
+	text-align:center;
+	padding:5px 0px 0px 0px;
+}
+.strashdiv{
+	width:38%; 
+/*	width:120px; */
+	float:right;
+	padding: 20px 0px 0px 0px;
+	margin: 0px;
+}
+
+/* ;border: 0 none; padding: 10px 10px; border-radius: 8px; -webkit-border-radius: 8px; background-color: #0ee; color: black; */
+
+.thehole
+{
+	margin: 0;
+    padding: 10px 10px;
+	border: 0 none;
+	border-radius: 6px; 
+	-webkit-border-radius: 6px;
+    cursor: pointer;
+	color:#000;
+/*
+    background: #f0f0f0;
+    background: -moz-linear-gradient(top, #f0f0f0 0%, #00f8ff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0f0f0), color-stop(100%,#00f8ff));
+    background: -webkit-linear-gradient(top, #f0f0f0 0%,#00f8ff 100%);
+    background: -o-linear-gradient(top, #f0f0f0 0%,#00f8ff 100%);
+    background: -ms-linear-gradient(top, #f0f0f0 0%,#00f8ff 100%);
+    background: linear-gradient(to bottom, #f0f0f0 0%,#00f8ff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#00f8ff',GradientType=0 );
+*/
+	background: #ffd700;
+	background: -moz-linear-gradient(top,  #ff5b00 0%, #ffd700 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff5b00), color-stop(100%,#ffd700));
+	background: -webkit-linear-gradient(top,  #ff5b00 0%,#ffd700 100%);
+	background: -o-linear-gradient(top,  #ff5b00 0%,#ffd700 100%);
+	background: -ms-linear-gradient(top,  #ff5b00 0%,#ffd700 100%);
+	background: linear-gradient(to bottom,  #ff5b00 0%,#ffd700 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5b00', endColorstr='#ffd700',GradientType=0 );
+
+}
+
+

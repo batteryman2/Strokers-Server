@@ -1,0 +1,29 @@
+adduser rws
+gpasswd -a rws sudo
+su - rws
+mkdir .ssh
+chmod 700 .ssh
+nano .ssh/authorized_keys
+	paste public key 
+ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAsMgacGG+OwWqdaZqPlj/Mvk4Mih+LE/jBy3r4HMUbbnOCgqaRm5j/bV1Y6wxujCvrARer1pORRS0VxH9/E7u2z8j8BebIgGgCdN1QI+sfBz6hG2r2HLU4zr5U9cMXf/osBYZNLi0infqDIgwV53Vh9uKNp6i2POUa3N6hgjXqcW+u6fUvjO9OSYbFTX97YFckhqB/6OqXTC4ZceVr3O+5YiE9wK+0aSoFJczEVKytLKZOIsgotTA/7uiYBYxT9HuTNL/B/1zPwiJAR4eIbfa/OTsbdNU++m6yAiMmAptg2iRxQpablcMP1SGTLB8O0FkoHxghb7Q3VrWIiAQpMp8iQ== rsa-key-20150921
+chmod 600 .ssh/authorized_keys
+exit
+sudo nano /etc/ssh/sshd_config
+	change PermitRootLogin no
+sudo service ssh restart
+sudo ufw allow ssh
+sudo ufw allow 80/tcp
+sudo ufw allow 3000/tcp
+sudo ufw allow 443/tcp
+sudo ufw show added
+sudo ufw enable
+sudo dpkg-reconfigure tzdata
+sudo apt-get update
+sudo apt-get install ntp
+sudo fallocate -l 2G /swapfile	
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+sudo sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab'
+
+sudo npm install pm2 -g

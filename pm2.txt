@@ -1,0 +1,19 @@
+  pm2 startup // give you below
+  sudo su -c "env PATH=$PATH:/usr/local/bin pm2 startup linux -u rws --hp /home/rws"
+  pm2 start npm -- start
+  pm2 save
+ 
+ pm2 list
+ pm2 start npm -- start
+ pm2 stop nmp
+
+curl -X GET \
+	-H "X-Parse-Application-Id: oss-f8-app-2016" \
+	-H "X-Parse-Master-Key: 70c6093dba5a7e55968a1c7ad3dd3e5a74ef5cac" \ 
+	http://www.rwsdo.duckdns.org:8080/parse/players \
+	
+curl -X GET http://www.rwsdo.duckdns.org
+
+ 
+ps aux
+sudo kill -KILL 1174
